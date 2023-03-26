@@ -10,8 +10,6 @@ import Head from "next/head";
 import styles from "/styles/pages/Home.module.scss";
 
 // Other imports
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
 
 // Metadata
 export const metadata = {

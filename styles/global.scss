@@ -13,6 +13,17 @@ body {
    min-height: 100vh;
    overflow-x: hidden;
    @include dark-color-bg(medium);
+   min-height: 200vh;
+   padding-block: 10rem;
+}
+
+body.scroll-down .navbar {
+   transform: translate3d(0, -100%, 0);
+}
+
+body.scroll-up .navbar {
+   @include dark-color-bg(medium);
+   border-color: #555;
 }
 
 .container {

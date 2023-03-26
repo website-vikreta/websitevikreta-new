@@ -1,0 +1,149 @@
+.navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   z-index: 1000;
+   transition: 0.35s ease-out;
+   border-bottom: 1px solid transparent;
+
+   // making navbar flex
+   .container {
+      @include flex-between;
+      padding: 1.5rem 0;
+   }
+
+   .checkboxNavToggle {
+      display: none;
+   }
+
+   .logo {
+      @include flex-center(10px);
+
+      img {
+         max-height: 28px;
+         width: auto;
+      }
+
+      h1 {
+         font-size: 24px;
+         @include font-weight(bold);
+         @include flex-center;
+
+         span {
+            color: $yellow;
+         }
+      }
+
+      .toggleBtn {
+         display: none;
+      }
+   }
+
+   .wrapper {
+      @include flex-between;
+      width: 100%;
+   }
+
+   .navList,
+   .socialIcons {
+      @include flex-center(1.5rem);
+   }
+
+   .navList {
+      padding: 0 50px;
+   }
+
+   .navItem,
+   .social {
+      transition: 0.35s ease-out;
+   }
+
+   .navItem:hover,
+   .social:hover {
+      color: $yellow;
+   }
+
+   .socialIcons {
+      margin-left: auto;
+      gap: 1rem;
+   }
+
+   @media screen and (max-width: 1220px) {
+      .container {
+         padding: 1.5rem 50px;
+      }
+   }
+
+   @media screen and (max-width: 992px) {
+      .container {
+         padding: 1.5rem 30px;
+      }
+
+      // toggle
+      .toggleBtn {
+         display: block;
+         width: 40px;
+         height: 40px;
+         @include flex-center(5px);
+         flex-direction: column;
+         transition: 0.5s ease-out;
+         text-align: center;
+
+         .line {
+            width: 100%;
+            height: 2px;
+            background: $light;
+            transform-origin: center;
+            position: relative;
+            transition: 0.35s ease-in-out;
+         }
+      }
+
+      .checkboxNavToggle:checked ~ .toggleBtn {
+         gap: 0;
+
+         .one {
+            transform: translateY(1px) rotate(90deg);
+         }
+
+         transform: rotate(45deg);
+      }
+
+      .checkboxNavToggle:checked ~ .wrapper {
+         opacity: 1;
+         visibility: visible;
+      }
+
+      .wrapper {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100vh;
+         @include dark-color-bg(dark);
+         opacity: 0;
+         visibility: hidden;
+         z-index: -1;
+         transition: 0.35s ease-out;
+         flex-direction: column;
+         padding: 30vh 0;
+
+         .navList {
+            flex-direction: column;
+            font-size: 1.2rem;
+         }
+
+         .socialIcons {
+            margin-left: initial;
+            font-size: 1.5rem;
+         }
+      }
+
+      .topNavWrapper {
+         width: 100%;
+         @include flex-between;
+      }
+   }
+}
