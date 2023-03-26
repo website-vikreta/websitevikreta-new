@@ -25,8 +25,10 @@ export const metadata = {
 
 export default function Home() {
    return (
-      <main className="container">
-         <span>website vikreta is under migration</span>
+      <main className={`${styles.page} ${styles.homePage}`}>
+         <div className="container">
+            <span>website vikreta is under migration</span>
+         </div>
       </main>
    );
 }

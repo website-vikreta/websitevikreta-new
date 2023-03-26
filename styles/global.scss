@@ -5,6 +5,8 @@
 @import "./misc/typography"; // typography classes
 @import "./misc/cta"; // call to action classes
 
+// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
 body {
    font-family: "Roboto", sans-serif;
    color: $light;
@@ -13,8 +15,6 @@ body {
    min-height: 100vh;
    overflow-x: hidden;
    @include dark-color-bg(medium);
-   min-height: 200vh;
-   padding-block: 10rem;
 }
 
 body.scroll-down .navbar {
@@ -40,4 +40,13 @@ body.scroll-up .navbar {
    transform: translate(-30%, -20%);
    z-index: 9999;
    pointer-events: none;
+}
+
+@media screen and (max-width: 1220px) {
+   // global components
+   .container {
+      max-width: initial;
+      width: 100%;
+      padding: 0 50px;
+   }
 }

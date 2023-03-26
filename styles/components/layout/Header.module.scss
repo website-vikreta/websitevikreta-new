@@ -29,8 +29,6 @@
       h1 {
          font-size: 24px;
          @include font-weight(bold);
-         @include flex-center;
-
          span {
             color: $yellow;
          }

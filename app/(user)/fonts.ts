@@ -5,4 +5,5 @@ export const roboto = Roboto({
    style: ["normal", "italic"],
    subsets: ["latin"],
    variable: "--font-roboto",
+   display: "swap",
 });
