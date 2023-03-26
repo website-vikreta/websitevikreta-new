@@ -1,0 +1,32 @@
+@import "./misc/variables"; // defining all the variables
+@import "./misc/resets"; // some global resets
+@import "./misc/mixins"; // defining the required mixins
+@import "./misc/helpers"; // helper classes to be use
+@import "./misc/typography"; // typography classes
+@import "./misc/cta"; // call to action classes
+
+body {
+   font-family: "Roboto", sans-serif;
+   color: $light;
+   position: relative;
+   scroll-behavior: smooth;
+   min-height: 100vh;
+   overflow-x: hidden;
+   @include dark-color-bg(medium);
+}
+
+.container {
+   max-width: 1200px;
+   margin: auto;
+}
+
+.mouse {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   width: 2rem;
+   height: 2rem;
+   transform: translate(-30%, -20%);
+   z-index: 9999;
+   pointer-events: none;
+}
