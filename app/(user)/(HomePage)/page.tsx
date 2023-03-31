@@ -5,6 +5,7 @@ import Image from "next/image";
 import Head from "next/head";
 
 // Component imports
+import HomePage from "./HomePage";
 
 // Styles import
 import styles from "/styles/pages/Home.module.scss";
@@ -26,9 +27,7 @@ export const metadata = {
 export default function Home() {
    return (
       <main className={`${styles.page} ${styles.homePage}`}>
-         <div className="container">
-            <span>website vikreta is under migration</span>
-         </div>
+         <HomePage />
       </main>
    );
 }

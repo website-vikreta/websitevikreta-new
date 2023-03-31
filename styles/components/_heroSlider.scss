@@ -1,0 +1,165 @@
+.hero {
+   padding: 0 0;
+   position: relative;
+
+   // making row
+   .container {
+      @include flex-center;
+      min-height: 100vh;
+   }
+
+   &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100vh;
+      @include dark-color-bg(light);
+   }
+
+   .content,
+   .heroImage {
+      flex: 1;
+   }
+
+   .content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 4rem;
+   }
+
+   .sub-title {
+      letter-spacing: 0.1em;
+      @include font-weight(light);
+      color: $yellow;
+      font-size: 1rem;
+      overflow: hidden;
+      position: relative;
+
+      .overlay {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         @include dark-color-bg(medium);
+         z-index: 1;
+      }
+   }
+
+   .title {
+      font-size: 3rem;
+      @include font-weight(bold);
+      margin-top: 0.9rem;
+
+      .hide {
+         overflow: hidden;
+      }
+
+      span {
+         color: $yellow;
+      }
+   }
+
+   .para {
+      @include para-font;
+      width: 80%;
+   }
+
+   .features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      i {
+         color: $yellow;
+         margin-right: 8px;
+      }
+
+      li {
+         @include font-weight(light);
+      }
+   }
+
+   .buttonGroup {
+      @include flex-center(3rem);
+      justify-content: flex-start;
+      margin-top: 3rem;
+   }
+
+   // hero image
+   .heroImage {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+
+      .heroSlider {
+         width: 85%;
+         position: absolute;
+         bottom: 0;
+         right: 0;
+      }
+
+      .image {
+         height: 85vh;
+
+         img {
+            width: 100%;
+         }
+      }
+   }
+
+   // recent work
+   &:before {
+      content: "Our Recent Work";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      background: $light;
+      @include dark-color(dark);
+      @include font-weight(medium);
+      font-size: 0.9rem;
+      width: fit-content;
+      height: fit-content;
+      padding: 8px 16px;
+      z-index: 10;
+   }
+}
+
+@media screen and (max-width: 992px) {
+   .hero {
+      // .title{}
+      .heroImage {
+         display: none;
+      }
+
+      &::after {
+         z-index: -2;
+         width: 30%;
+         left: initial;
+         right: 0;
+      }
+
+      &::before {
+         display: none;
+      }
+   }
+}
+
+@media screen and (max-width: 768px) {
+   // hero
+   .hero {
+      .content {
+         .title {
+            max-width: 80%;
+         }
+
+         .para {
+            width: 100% !important;
+         }
+      }
+   }
+}

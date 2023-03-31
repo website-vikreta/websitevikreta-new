@@ -1,0 +1,32 @@
+.form-group {
+   width: 100%;
+
+   .error {
+      color: $orange;
+      font-size: 0.9rem;
+      padding: 5px 0;
+      @include font-weight(light);
+   }
+}
+
+.form-control {
+   width: 100%;
+   height: 3.5rem;
+   border-radius: 0;
+   @include dark-color-bg(dark);
+   border: 1px solid map-get($map: $black-colors, $key: light);
+   color: $light;
+   padding: 1rem;
+   font-size: 1rem;
+   font-family: inherit;
+
+   &:focus {
+      outline: none;
+      border-color: rgba(255, 214, 0, 0.5);
+   }
+}
+
+textarea {
+   min-height: 150px;
+   resize: none;
+}
