@@ -18,7 +18,8 @@ import {
    frameAnimationIvert,
    fade,
 } from "@/components/effects/animation";
-import HeroSection from "@/components/website/HeroSection";
+import HeroSection from "@/components/website/HomePage/HeroSection";
+import AboutSection from "@/components/website/HomePage/AboutSection";
 
 // Styles import
 import styles from "/styles/pages/Home.module.scss";
@@ -55,8 +56,8 @@ const HomePage = () => {
 
          <motion.div variants={fade}>
             <HeroSection />
-            {/* <AboutSection />
-            <ServicesSection />
+            <AboutSection />
+            {/* <ServicesSection />
             <FaqSection />
             <TestimonialSection />
             <HireUsSection /> */}

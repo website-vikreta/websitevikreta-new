@@ -1,0 +1,159 @@
+// -----------------------------------------
+// About Us
+// -----------------------------------------
+.aboutUs {
+   // Styling numbers
+   .numbers {
+      @include flex-center(5rem);
+      flex-wrap: wrap;
+      padding-top: 150px;
+
+      .card {
+         position: relative;
+         text-align: center;
+      }
+
+      .image {
+         position: absolute;
+         top: 40%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         z-index: -1;
+         max-width: 7rem;
+      }
+
+      .number {
+         @include heading-font;
+         color: $yellow;
+      }
+
+      .text {
+         @include para-font;
+      }
+   }
+
+   // wrapper
+   .wrapper {
+      @include flex-center;
+      align-items: stretch;
+
+      margin-top: 150px;
+
+      .left,
+      .right {
+         width: 50%;
+      }
+
+      .left {
+         position: relative;
+         overflow: hidden;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+
+         .vertCol {
+            width: 10%;
+            height: 100%;
+            @include dark-color-bg(light);
+
+            &.one {
+               width: 60%;
+            }
+
+            &.two {
+               width: 10%;
+            }
+
+            &.three {
+               width: 5%;
+            }
+
+            &.four {
+               width: 2.5%;
+            }
+         }
+      }
+
+      .right {
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+         max-width: 600px;
+         margin-right: auto;
+      }
+
+      h2 {
+         @include heading-font;
+      }
+
+      p {
+         @include para-font;
+         font-size: 0.9rem;
+
+         &:not(:last-child) {
+            margin-bottom: 0.75rem;
+         }
+      }
+
+      a {
+         width: fit-content;
+      }
+   }
+}
+
+@media screen and (max-width: 992px) {
+   .aboutUs {
+      .wrapper {
+         .right {
+            padding-right: 30px;
+            gap: 1.5rem;
+         }
+
+         .left {
+            width: 40%;
+         }
+
+         .right {
+            width: 60%;
+         }
+      }
+   }
+}
+@media screen and (max-width: 768px) {
+   // about us
+   .aboutUs {
+      .numbers {
+         display: grid !important;
+         grid-template-columns: 1fr 1fr;
+         grid-gap: 5rem 0;
+         padding-top: 100px;
+      }
+
+      .wrapper {
+         padding: 30px;
+         position: relative;
+         margin-top: 100px;
+
+         &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%;
+            height: 100%;
+            @include dark-color-bg(light);
+            z-index: -1;
+         }
+
+         .left {
+            display: none;
+         }
+
+         .right {
+            width: 100%;
+            padding-left: 5%;
+            padding-right: 0;
+         }
+      }
+   }
+}
