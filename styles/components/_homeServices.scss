@@ -1,0 +1,124 @@
+// -----------------------------------------
+// Our Services
+// -----------------------------------------
+.services {
+   padding-top: 0 !important;
+
+   .heading {
+      @include flex-between;
+      gap: 50px;
+
+      h2 {
+         @include heading-font;
+         white-space: nowrap;
+      }
+
+      .line {
+         width: 100%;
+         height: 1px;
+         background: $yellow;
+         opacity: 0.3;
+      }
+   }
+
+   .cardWrapper {
+      @include flex-center(100px 20px);
+      flex-wrap: wrap;
+      align-items: stretch;
+      margin-top: calc(5rem + 50px);
+      margin-bottom: 50px;
+      .card {
+         @include dark-color-bg(dark);
+         padding: 100px 2rem 2rem 2rem;
+         position: relative;
+         width: 100%;
+         max-width: 17.8rem;
+         display: flex;
+         flex-direction: column;
+      }
+
+      img {
+         position: absolute;
+         top: -80px;
+         right: 20px;
+         max-width: 55%;
+      }
+
+      .cardHeading {
+         display: block;
+         max-width: 70%;
+         font-size: 1.5rem;
+         @include font-weight(medium);
+      }
+
+      .para {
+         @include para-font;
+         font-size: 0.9rem;
+         margin-top: 0.5rem;
+      }
+
+      ul {
+         margin-top: 1rem;
+      }
+
+      ul li {
+         display: flex;
+         gap: 1rem;
+         margin: 10px 0;
+         @include font-weight(light);
+         opacity: 0.9;
+         font-size: 0.9rem;
+
+         i {
+            color: $yellow;
+         }
+      }
+   }
+
+   .buttonGroup {
+      @include flex-center(20px);
+   }
+}
+
+@media screen and (max-width: 1220px) {
+   // services
+   .services .cardWrapper .card {
+      max-width: 40%;
+      padding-top: 75px;
+
+      img {
+         max-width: 40%;
+      }
+   }
+}
+@media screen and (max-width: 768px) {
+   //services
+   .services {
+      .cardWrapper {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         grid-gap: 100px 1rem;
+
+         .card {
+            width: 100% !important;
+            max-width: initial;
+         }
+      }
+   }
+}
+@media screen and (max-width: 500px) {
+   .services .cardWrapper {
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+      margin-top: 50px;
+
+      .card {
+         padding: 4rem 2rem 2rem 2rem;
+      }
+
+      .card img {
+         max-width: 20%;
+         top: 20px;
+      }
+   }
+}

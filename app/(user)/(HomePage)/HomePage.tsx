@@ -20,6 +20,10 @@ import {
 } from "@/components/effects/animation";
 import HeroSection from "@/components/website/HomePage/HeroSection";
 import AboutSection from "@/components/website/HomePage/AboutSection";
+import ServicesSection from "@/components/website/HomePage/ServicesSection";
+import FaqSection from "@/components/website/HomePage/FaqSection";
+import TestimonialSection from "@/components/website/HomePage/TestimonialSection";
+import HireUsSection from "@/components/website/HomePage/HireUsSection";
 
 // Styles import
 import styles from "/styles/pages/Home.module.scss";
@@ -57,10 +61,10 @@ const HomePage = () => {
          <motion.div variants={fade}>
             <HeroSection />
             <AboutSection />
-            {/* <ServicesSection />
+            <ServicesSection />
             <FaqSection />
             <TestimonialSection />
-            <HireUsSection /> */}
+            <HireUsSection />
          </motion.div>
       </motion.div>
    );

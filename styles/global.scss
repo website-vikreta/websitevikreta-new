@@ -86,3 +86,25 @@ body.scroll-up .navbar {
       @include dark-color-bg(light);
    }
 }
+
+// Resetting Testimonials sliders & slick dots
+.testimonialSlider {
+   $slider-gap: 3rem;
+   .slick-track {
+      padding-top: $slider-gap;
+      display: flex !important;
+   }
+
+   .slick-slide {
+      padding: 0 8px;
+      height: inherit !important;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+
+      & > div {
+         height: 100%;
+      }
+   }
+   @include slick-dots;
+}
